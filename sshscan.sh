@@ -1,4 +1,6 @@
 #!/bin/bash
+# ig: @thelinuxchoice
+
 read -e -p "Put range ip part 1/4, e.g.:192 255 -> " r1
 read -e -p "Put range ip part 2/4, e.g: 168 255 -> " r2
 read -e -p "Put range ip part 3/4, e.g.: 1 255 -> " r3
@@ -8,8 +10,8 @@ read -e -p "Numbers of Threads (Scan): " threads
 read -e -p "Number of Simultaneous Connections (Brute Force): " threads_bf
 read -e -p "Users List: " user
 read -e -p "Passwords List: " pass
-echo '' > targets #>> target
-for x in $(seq $r1);do for y in $(seq $r2);do for z in $(seq $r3);do for w in $(seq $r4);do # >> target
+echo '' > targets
+for x in $(seq $r1);do for y in $(seq $r2);do for z in $(seq $r3);do for w in $(seq $r4);do
 echo $port $x.$y.$z.$w >> targets
 done done done done
 echo '' > logfile;
